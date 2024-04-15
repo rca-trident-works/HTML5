@@ -1,0 +1,9 @@
+@charset "UTF-8";
+.text {
+    color: red;
+    font-size: 2em;
+}
+#recipe-Hamburg {
+    color: blue;
+    font-size: 3em;
+}
