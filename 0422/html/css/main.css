@@ -31,3 +31,7 @@ a:visited{
 a:active{
     color:red;
 }
+
+img{
+    width: 80%;
+}
