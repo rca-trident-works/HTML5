@@ -1,0 +1,15 @@
+* {
+    font-style:unset;
+}
+
+table {
+    border: 1px outset;
+}
+
+th, td {
+    border : 1px inset;
+}
+
+th {
+    background-color: #778799;
+}
