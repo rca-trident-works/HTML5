@@ -23,7 +23,7 @@ table.style1 {
     background-color: #778799;
 }
 
-/* style2 (Level 1,2) */
+/* style2 (Level 3) */
 table.style2, .style2 th, .style2 td {
     border-collapse: collapse;
     border: 1px solid black;
