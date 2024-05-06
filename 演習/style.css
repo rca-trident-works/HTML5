@@ -6,11 +6,11 @@ th>*, td>* {
     padding-right: 0.5em;
 }
 
-/* style1 (Level 1,2) */
 ._fill {
     background-color: blue;
 }
 
+/* style1 (Level 1,2) */
 table.style1 {
     border: 1px outset;
 }
