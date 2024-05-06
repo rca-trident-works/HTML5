@@ -2,15 +2,22 @@
     font-style:unset;
 }
 
-table .style1 {
+th>*, td>* {
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+table.style1 {
     border: 1px outset;
 }
 
-table .style1 > th, td {
+.style1 th, .style1 td {
     border : 1px inset;
 }
 
-table .style1 > th {
+.style1 th {
     background-color: #778799;
 }
 
@@ -18,8 +25,9 @@ table .style1 > th {
     background-color: blue;
 }
 
-table .style2 {
-    border: 1px solid;
+table.style2, .style2 th, .style2 td {
+    border-collapse: collapse;
+    border: 1px solid black;
 }
 
 
