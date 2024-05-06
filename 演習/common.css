@@ -13,3 +13,7 @@ th, td {
 th {
     background-color: #778799;
 }
+
+._fill {
+    background-color: blue;
+}
