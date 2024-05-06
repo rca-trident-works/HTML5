@@ -10,6 +10,10 @@ th>*, td>* {
     background-color: blue;
 }
 
+table {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
 /* style1 (Level 1,2) */
 table.style1 {
     border: 1px outset;
