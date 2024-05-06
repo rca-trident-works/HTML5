@@ -14,6 +14,14 @@ table {
     margin-top: 2em;
     margin-bottom: 2em;
 }
+
+body {
+    font-family: sans-serif;
+}
+
+th {
+    background-color: #778799;
+}
 /* style1 (Level 1,2) */
 table.style1 {
     border: 1px outset;
@@ -21,10 +29,6 @@ table.style1 {
 
 .style1 th, .style1 td {
     border : 1px inset;
-}
-
-.style1 th {
-    background-color: #778799;
 }
 
 /* style2 (Level 3) */
