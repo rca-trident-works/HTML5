@@ -2,18 +2,24 @@
     font-style:unset;
 }
 
-table {
+table .style1 {
     border: 1px outset;
 }
 
-th, td {
+table .style1 > th, td {
     border : 1px inset;
 }
 
-th {
+table .style1 > th {
     background-color: #778799;
 }
 
 ._fill {
     background-color: blue;
 }
+
+table .style2 {
+    border: 1px solid;
+}
+
+
