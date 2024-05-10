@@ -1,0 +1,58 @@
+div, span {
+    background-color: mistyrose;
+}
+
+.box01 {
+    width: 800px;
+    height: 600px;
+    background-color: mistyrose;
+    background-image: url("background-dot.png");
+}
+
+.box02 {
+    width: 800px;
+    height: 600px;
+    background-color: mistyrose;
+    background-image: url("background-dot.png");
+    background-repeat: no-repeat;
+}
+
+.box03 {
+    width: 800px;
+    height: 600px;
+    background-color: mistyrose;
+    background-image: url("background-dot.png");
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.box04 {
+    width: 800px;
+    height: 600px;
+    background-color: mistyrose;
+    background-image: url("background-dot.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.box05 {
+    width: 800px;
+    height: 600px;
+    background-color: mistyrose;
+    background-image: url("background-dot.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.box04 {
+    width: 800px;
+    height: 600px;
+    background-color: mistyrose;
+    background-image: url("background-dot.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
