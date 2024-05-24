@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- 
+          タイトルは授業日にしてください。
+        -->
+    <title>20240524</title>
+    <!--
+            CSSの連携時に気を付けること
+            ・htmlと同じ場所に格納する場合、href属性は「main.css」や「./main.css」とする。
+            ・href属性はcssのフォルダのパスに空白が含まれている場合を考慮して、""で囲う癖をつける。
+      
+            例：「"../css file/main.css"」
+        -->
+    <link href="./css/main.css" rel="stylesheet">
+</head>
+<form action="sample.php">
+    <p><label for="name">名前</label></p>
+    <p><input type="text" id="name"></p>
+    <p><label for="detail">お問い合わせ内容</label></p>
+    <p><textarea id="detail"></textarea></p>
+    <p><input type="submit" value="送信する"></p>
+</form>
+
+<body>
+
+
+</html>
