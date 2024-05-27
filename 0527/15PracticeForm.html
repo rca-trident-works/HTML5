@@ -1,0 +1,81 @@
+<html lang="ja">
+
+<head>
+    <!-- TODO -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="contact_container">
+        <h1 class="contact_title">Contact</h1>
+
+        <form action="" method="get">
+            <table class="contact_table">
+                <tr>
+                    <th class="contact_table_header">名前</th>
+                    <td class="contact_table_item">
+                        <input type="text" name="name">
+                    </td>
+                <tr>
+                    <th class="contact_table_header">性別</th>
+                    <td class="contact_table_item">
+                        <input type="radio" id="male" name="性別" value="男">
+                        <label for="male">男</label>
+                        <input type="radio" id="female" name="性別" value="女">
+                        <label for="female">女</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="contact_table_header">メール</th>
+                    <td class="contact_table_item">
+                        <input type="email" name="email">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="contact_table_header">電話</th>
+                    <td class="contact_table_item">
+                        <input type="tel" name="電話">
+                    </td>
+                </tr>
+                <tr>
+                    <th class="contact_table_header">職業</th>
+                    <td class="contact_table_item">
+                        <select name="職業">
+                            <option value="">選択</option>
+                            <option value="student">学生</option>
+                            <option value="employee">会社員</option>
+                            <option value="self-employed">自営業</option>
+                            <option value="other">その他</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="contact_table_header">スキル</th>
+                    <td class="contact_table_item">
+                        <input type="checkbox" id="html_css" name="スキル" value="html_css">
+                        <label for="html_css">HTML,CSS</label>
+                        <input type="checkbox" id="javascript_jquery" name="スキル" value="javascript_jquery">
+                        <label for="javascript_jquery">JavaScript,jQuery</label>
+                        <input type="checkbox" id="wordpress" name="スキル" value="wordpress">
+                        <label for="wordpress">WordPress</label>
+                        <input type="checkbox" id="other" name="スキル" value="other">
+                        <label for="other">その他</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="contact_table_header">お問い合わせ内容(必須)</th>
+                    <td class="contact_table_item">
+                        <textarea name="お問い合わせ内容" required></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <button type="submit">送信</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>
