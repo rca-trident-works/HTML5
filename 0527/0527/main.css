@@ -10,6 +10,7 @@ body {
     padding: 50px;
     background-color: #FFFFFF;
     box-sizing: border-box;
+    border-radius: 8px;
 }
 
 h1 {
@@ -25,12 +26,25 @@ input {
 }
 
 input[type="submit"] {
-    width: 100%;
     transition: background 0.3s ease;
     background: linear-gradient(45deg, #4CAF50, #8BC34A);
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+input[type="reset"] {
+    transition: background 0.3s ease;
+    background: linear-gradient(45deg, #FF5252, #CC0345);
+    border: none;
+    color: white;
+    padding: 16px;
     text-align: center;
     font-size: 16px;
     margin: 4px 2px;
@@ -44,6 +58,11 @@ input[type="submit"]:hover {
     transform: scale(1.05);
 }
 
+input[type="reset"]:hover {
+    background: linear-gradient(45deg, #a04545, #B34242);
+    transform: scale(1.05);
+}
+
 textarea {
     width: 100%;
     height: 500px;
@@ -51,4 +70,11 @@ textarea {
     border: 2px solid #ccc;
     border-radius: 8px;
     padding: 0.5em;
+}
+
+._bottom {
+    /* 横に並べる */
+    display: flex;
+    justify-content: space-evenly;
+
 }
