@@ -33,3 +33,7 @@ textarea {
     width: 100%;
     min-height: 200px;
 }
+
+.submit_form_button { /* Workaround */
+    margin-left: 5%;
+}
