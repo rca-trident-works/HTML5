@@ -9,10 +9,11 @@
     --color-light-hover-green: #A8B3A4;
     --color-background-header: #F4F6F1;
     --color-background-meta: #F4F6F1;
-    --color-background-body: #F4F6F1;
+    --color-background-body: transparent;
     --color-background-links: #F4F6F1;
-    --color-article-header: #A8B3A4;
+    --color-article-header:  #F4F6F1;
     --color-text: #333;
+    --color-header-text: #333;
     --color-subtext: #666;
     --color-figure-caption: #555;
     --color-border: #ddd;
@@ -81,7 +82,6 @@ header img {
     margin: 20px auto;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .column-links {
@@ -92,14 +92,17 @@ header img {
 
 .article_header {
     background-color: var(--color-article-header);
-    color: #fff;
     padding: 10px 15px;
     border-radius: 6px 6px 0 0;
     margin-bottom: 1em;
 }
 
 .article_header p {
+    font-size: 1.8em;
+    font-weight: 500;
     margin: 1em 0;
+    color: var(--color-header-text);
+    border-bottom: 2px solid var(--color-medium-orange);
 }
 
 h2 {
@@ -153,11 +156,6 @@ figcaption {
     color: var(--color-figure-caption);
 }
 
-.article_header p {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-bottom: 1em;
-}
 
 ul {
     list-style: disc inside;
@@ -184,6 +182,17 @@ figcaption {
     .content_container {
         flex-direction: column;
         width: 100%;
+    }
+
+    /* 並び順を変更 */
+    .column-body {
+        order: 1;
+    }
+    .column-links {
+        order: 2;
+    }
+    .column-meta {
+        order: 3;
     }
 
     .column {
@@ -227,12 +236,10 @@ figcaption {
     border-radius: 4px;
 }
 
-/* List styling */
-ul {
-    list-style-type: none;
-    padding: 0;
+.links_container ul {
+    margin-left: 1em;
 }
 
-li {
-    margin-bottom: 0.5rem;
+ul { /* リストスタイルをリセット */
+    list-style: none;
 }
