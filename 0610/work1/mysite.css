@@ -91,6 +91,17 @@ header img {
     border-radius: 8px;
 }
 
+.meta_motto .motto_header {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--color-medium-orange);
+    margin-bottom: 1em;
+}
+
+.meta_motto .motto_body {
+    color: var(--color-subtext);
+}
+
 .article_header {
     background-color: var(--color-article-header);
     padding: 10px 15px;
@@ -230,6 +241,10 @@ figcaption {
     padding: 0.2rem 0.5rem;
 }
 
+.links_container li:last-child {
+    margin-bottom: 0;
+}
+
 .links_container li:hover {
     color: var(--color-hover-green);
     background-color: var(--color-light-hover-green);
@@ -239,6 +254,7 @@ figcaption {
 
 .links_container ul {
     margin-left: 1em;
+    margin-bottom: 0;
 }
 
 ul { /* リストスタイルをリセット */
