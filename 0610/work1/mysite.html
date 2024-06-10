@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3カラムレイアウト</title>
     <link rel="stylesheet" href="mysite.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -20,8 +25,11 @@
             <p>column-meta</p>
         </div>
         <div class="column column-body">
+
             <article>
-                <h1>ミドリヒルズアカデミー体験入学のご案内</h1>
+                <div class="article_header">
+                    <p>ミドリヒルズアカデミー体験入学のご案内</p>
+                </div>
 
                 <p>ミドリヒルズアカデミーへようこそ！</p>
                 <p>ミドリヒルズアカデミーでは、未来の学生たちに学校の雰囲気を体験していただくための体験入学プログラムを実施しています。このプログラムを通じて、学生たちは実際の授業やクラブ活動に参加し、学校生活を実際に体験することができます。
@@ -58,7 +66,24 @@
             </article>
         </div>
         <div class="column column-links">
-            <p>column-links</p>
+            <div class="links_container">
+                <p class="links_title">カテゴリー</p>
+                <ul>
+                    <li><a href="#">ミドリヒルズアカデミーについて</a></li>
+                    <li><a href="#">教育プログラム</a></li>
+                    <li><a href="#">入学案内</a></li>
+                    <li><a href="#">お問い合わせ</a></li>
+                </ul>
+            </div>
+            <div class="links_container">
+                <p class="links_title">リンク</p>
+                <ul>
+                    <li><a href="#">体験入学お申し込み</a></li>
+                    <li><a href="#">アクセス</a></li>
+                    <li><a href="#">サイトマップ</a></li>
+                </ul>
+
+            </div>
         </div>
     </div>
 </body>
