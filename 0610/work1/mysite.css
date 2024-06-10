@@ -52,10 +52,12 @@ header {
         .title {
             font-size: 1.5em;
             font-weight: bold;
+            color: var(--color-header-text);
         }
 
         .sub_title {
             font-size: 1em;
+            color: var(--color-subtext);
         }
     }
 }
