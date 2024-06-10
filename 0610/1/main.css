@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+div {
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+  font-size: 80px;
+  font-weight: bold;
+  line-height: 1;
+  color: #FFFFFF;
+}
+/* .box1 {
+  background-color: #DDDDDD;
+}
+.box2 {
+  background-color: #CCCCCC;
+}
+.box3 {
+  background-color: #BBBBBB;
+}
+.box4 {
+  background-color: #AAAAAA;
+} */
