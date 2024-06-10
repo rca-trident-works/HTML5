@@ -79,16 +79,13 @@ header {
             align-items: center;
             border: 2px solid var(--color-medium-green);
             border-radius: 12px;
-            padding: 0 1em;
             img {
-                margin: 2em 1em;
+                margin: 0 1em;
                 height: 40%;
                 width: auto;
-                transition: transform 0.2s ease;
             }
             img:hover {
                 cursor: pointer;
-                transform : scale(1.4);
             }
         }
     }
