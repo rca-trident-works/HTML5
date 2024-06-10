@@ -23,8 +23,10 @@ div {
 }
 
 .back_top {
-    margin: 20px;
-    text-align: right;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 0;
 }
 
 a {
@@ -40,9 +42,14 @@ a:hover {
 }
 
 ul {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
     list-style: none;
 }
 
 li {
-    margin: 10px 0 0;
+    margin: 0 0 10px;
 }
