@@ -84,6 +84,9 @@ header {
                 height: 40%;
                 width: auto;
             }
+            img:hover {
+                cursor: pointer;
+            }
         }
     }
 }
