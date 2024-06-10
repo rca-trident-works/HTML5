@@ -212,7 +212,8 @@ figure {
 
     .content_container {
         flex-direction: column;
-        width: 100%;
+        /* width: 100%; */
+        max-width: 95vw;
 
         .column-body {
             order: 1;
