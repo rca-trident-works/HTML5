@@ -1,17 +1,17 @@
 :root {
-    --color-light-green: #B4D0C1;
-    --color-medium-green: #B7CDAC;
-    --color-light-orange: #F1B167;
-    --color-medium-orange: #CF6748;
-    --color-light-blue: #91C4C0;
-    --color-dark-green: #00796B;
-    --color-hover-green: #004D40;
-    --color-light-hover-green: #B2DFDB;
-    --color-background-header: #e3f2f1; /* 薄いバージョンの B4D0C1 */
-    --color-background-meta: #d7e7d8; /* 薄いバージョンの B7CDAC */
-    --color-background-body: #FAFAFA;
-    --color-background-links: #e1f0f1; /* 薄いバージョンの 91C4C0 */
-    --color-article-header: #B4D0C1; /* 薄いバージョンの CF6748 */
+    --color-light-green: #A8B3A4;
+    --color-medium-green: #879076;
+    --color-light-orange: #F4F6F1;
+    --color-medium-orange: #A46679;
+    --color-light-blue: #A8B3A4;
+    --color-dark-green: #44574E;
+    --color-hover-green: #879076;
+    --color-light-hover-green: #A8B3A4;
+    --color-background-header: #F4F6F1;
+    --color-background-meta: #F4F6F1;
+    --color-background-body: #F4F6F1;
+    --color-background-links: #F4F6F1;
+    --color-article-header: #A8B3A4;
     --color-text: #333;
     --color-subtext: #666;
     --color-figure-caption: #555;
@@ -57,7 +57,7 @@ header img {
 .content_container {
     display: flex;
     max-width: 90vw;
-    margin: 0 auto;
+    margin: 1em auto;
     border: 1px solid var(--color-border);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -95,10 +95,11 @@ header img {
     color: #fff;
     padding: 10px 15px;
     border-radius: 6px 6px 0 0;
+    margin-bottom: 1em;
 }
 
 .article_header p {
-    margin: 0.5em;
+    margin: 1em 0;
 }
 
 h2 {
