@@ -8,6 +8,30 @@ body {
     font-family: Arial, sans-serif;
 }
 
+header {
+    height: 6em;
+    display: flex;
+}
+
+header img {
+    height: 70%;
+    width: auto;
+    margin: auto 2em;
+}
+
+header .header_text {
+    margin: auto 0;
+}
+
+.header_text .title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.header_text .subtitle {
+    font-size: 1em;
+}
+
 .content_container {
     display: flex;
     max-width: 1200px;
