@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.column {
+    padding: 20px;
+    flex: 1;
+    border-right: 1px solid #ddd;
+}
+
+.column:last-child {
+    border-right: none;
+}
+
+.column-left {
+    background-color: #f8d7da;
+}
+
+.column-center {
+    background-color: #d4edda;
+}
+
+.column-right {
+    background-color: #d1ecf1;
+}
+
+/* スマホ対応のスタイル */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .column {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .column:last-child {
+        border-bottom: none;
+    }
+}
