@@ -85,7 +85,8 @@ header img {
 }
 
 .column-links {
-    background-color: var(--color-background-links);
+    padding: 0;
+    margin: 1rem;
     flex: 1;
     border-radius: 8px;
 }
