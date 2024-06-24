@@ -89,7 +89,6 @@ function q6() {
 
 // execute
 for (let i = 1; i <= 6; i++) {
-    console.log(`問${i}`);
+    console.log(`--- 問${i} ----------------------`);
     console.log(eval(`q${i}()`));
-    console.log('---');
 }
