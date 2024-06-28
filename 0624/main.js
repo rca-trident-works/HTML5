@@ -78,7 +78,7 @@ function q6() {
 
     let pattern = '';
     for (let i = 0; i < size; i++) {
-        for (let j = 0; j < 6; j++) {
+        for (let j = 0; j < size; j++) {
             pattern += (i + j) % 2 === 0 ? '□' : '■';
         }
         pattern += '\n';
