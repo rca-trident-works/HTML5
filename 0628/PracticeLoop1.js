@@ -1,33 +1,29 @@
 // random value 0-50
 const ansValue = Math.floor(Math.random() * 51);
-// Debug
-console.log("Answer: " + ansValue);
-var continueFlag = true;
-while (continueFlag) {
-    const input = prompt("0-50の値を入力してください");
-    // Debug
+console.log("Answer: " + ansValue); // Debug
+
+while (true) {
+    const input = prompt("0-50の値を入力してください")
+
     if (input === null) {
         alert("あきらめた");
-        continueFlag = false;
         break;
     }
-    if (isNaN(input)) {
+
+    const inputValue = parseInt(input);
+
+    if (isNaN(inputValue)) {
         alert("コラー");
         continue;
     }
-    let inputValue;
-    try {
-        inputValue = parseInt(input);
-    } catch (e) {
-        alert("コラー");
-        continue;
-    }
+
     if (inputValue === ansValue) {
-        alert("正解です");
-        continueFlag = false;
+        alert("当たり");
+        break;
     } else if (inputValue < ansValue) {
         alert("デカいと");
-    } else if (inputValue > ansValue) {
+    } else {
         alert("小さいと");
     }
 }
+
