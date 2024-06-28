@@ -10,6 +10,8 @@ while (true) {
         break;
     }
 
+    if (input === "") continue;
+
     const inputValue = parseInt(input);
 
     if (isNaN(inputValue)) {
@@ -22,8 +24,10 @@ while (true) {
         break;
     } else if (inputValue < ansValue) {
         alert("デカいと");
-    } else {
+    } else if (inputValue > ansValue) {
         alert("小さいと");
+    } else {
+        console.log("Invalid input");
     }
 }
 
