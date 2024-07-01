@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>数当てゲーム Function版</title>
+    <script>
+        let ansValue = Math.floor(Math.random() * 51);
+
+        function startGame() {
+            while (true) {
+                const input = prompt("0-50の値を入力してください");
+
+                if (input === null) {
+                    alert("あきらめた");
+                    break;
+                }
+
+                if (input === "") continue;
+
+                const inputValue = parseInt(input);
+
+                if (isNaN(inputValue)) {
+                    alert("コラー");
+                    continue;
+                }
+
+                if (inputValue === ansValue) {
+                    alert("当たり");
+                    break;
+                } else if (inputValue < ansValue) {
+                    alert("小さいと");
+                } else if (inputValue > ansValue) {
+                    alert("デカいと");
+                } else {
+                    console.log("Invalid input");
+                }
+            }
+        }
+
+        function changeAnswer() {
+            ansValue = Math.floor(Math.random() * 51);
+            alert("正解値が変更されました: " + ansValue); // Debug: 正解値を表示するためのアラート
+        }
+    </script>
+</head>
+
+<body>
+    <h1>数当てゲーム Function版</h1>
+    <button onclick="changeAnswer()">当たり変更</button>
+    <button onclick="startGame()">勝負</button>
+</body>
+
+</html>
