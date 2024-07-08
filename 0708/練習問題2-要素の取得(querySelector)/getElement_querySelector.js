@@ -20,7 +20,6 @@ function q2() {
 function q3() {
     const prefecture = document.querySelectorAll('.hokuriku');
     prefecture.forEach((item) => {
-        console.log(item);
         if (item.textContent === '神奈川県') {
             item.textContent = '福井県';
         }
