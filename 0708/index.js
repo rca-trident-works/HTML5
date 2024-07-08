@@ -1,4 +1,4 @@
-var element = document.getElementById("wether");
+var element = document.getElementById("weather");
 console.log(element);
 element.innerHTML = "<span>曇り</span>"
 
@@ -7,3 +7,7 @@ console.log(element);
 
 var element = document.querySelector("dl");
 console.log(element);
+
+// Change color to red
+var element = document.querySelector(".clsWeather");
+element.style.color = "red";
