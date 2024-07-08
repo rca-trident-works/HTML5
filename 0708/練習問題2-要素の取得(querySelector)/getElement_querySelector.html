@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Practice</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #2980b9;
+        }
+
+        h3 {
+            color: #16a085;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #ecf0f1;
+            margin-bottom: 5px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .tokai {
+            border-left: 5px solid #e74c3c;
+        }
+
+        .chubu {
+            border-left: 5px solid #f39c12;
+        }
+
+        .hokuriku {
+            border-left: 5px solid #3498db;
+        }
+
+        span.prefecture {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 3px;
+        }
+
+        .question {
+            background-color: #fff;
+            border-left: 5px solid #2ecc71;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JavaScript Practice</h1>
+    
+    <h2>querySelector、querySelectorAllで要素を取得</h2>
+    
+    <div class="question">
+        <p>
+            <strong>問１．</strong>↓のclass名「prefecture」の要素をすべて取得し、取得した要素をコンソールに出力してください。
+        </p>
+        <p>
+            ヒント：querySelectorAllの戻り値は配列に似た形で、.lengthで要素数を取得できます。また、配列同様～[x]で指定した要素のデータを取得できます。
+        </p>
+    </div>
+
+    <h3>中部地方の都道府県</h3>
+    <ul>
+        <li id="aichi" class="prefecture tokai">愛知県</li>
+        <li id="gifu" class="prefecture tokai">岐阜県</li>
+        <li id="shizuoka" class="prefecture tokai">静岡県</li>
+        <li id="mie" class="prefecture tokai">三重県</li>
+        <li id="nagano" class="prefecture chubu">長野県</li>
+        <li id="yamanashi" class="prefecture chubu">山梨県</li>
+        <li id="niigata" class="prefecture hokuriku">新潟県</li>
+        <li id="toyama" class="prefecture hokuriku">富山県</li>
+        <li id="ishikawa" class="prefecture hokuriku">石川県</li>
+        <li id="fukui" class="prefecture hokuriku">神奈川県</li>
+    </ul>
+    <span class="prefecture hokuriku">●新潟県</span>
+
+    <div class="question">
+        <p>
+            <strong>問２．</strong>問１のリストの三重県の文字の色を赤色にしてください。
+        </p>
+    </div>
+
+    <div class="question">
+        <p>
+            <strong>問３．</strong>問１のリストの神奈川県を福井県に変更してください。
+        </p>
+    </div>
+
+    <div class="question">
+        <p>
+            <strong>問４．</strong>問１のリストのul要素内のhokurikuクラスのテキストのみ文字の色を青色にしてください。
+        </p>
+    </div>
+
+    <script src="getElement_querySelector.js"></script>
+</body>
+
+</html>

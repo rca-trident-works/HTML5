@@ -11,3 +11,5 @@ console.log(element);
 // Change color to red
 var element = document.querySelector(".clsWeather");
 element.style.color = "red";
+// add .sample class
+element.classList.add("sample");
