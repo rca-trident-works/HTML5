@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>数当てゲーム Object版</title>
+    <meta charset="utf-8" />
+    <style>
+        .result {
+            display: inline-block;
+            width: 50px;
+            color: black;
+            background-color: black;
+            text-align: center;
+            border: 1px solid red;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const game = {
+                correctAnswer: Math.floor(Math.random() * 51),
+                initialize: function() {
+                    document.getElementById('result').innerText = this.correctAnswer;
+                    document.getElementById('judgment').innerText = '';
+                    document.getElementById('number').value = '';
+                },
+                judge: function() {
+                    const userInput = parseInt(document.getElementById('number').value);
+                    if (isNaN(userInput)) {
+                        alert("数字を入力してください。");
+                        return;
+                    }
+                    if (userInput < this.correctAnswer) {
+                        document.getElementById('judgment').innerText = "小さい";
+                    } else if (userInput > this.correctAnswer) {
+                        document.getElementById('judgment').innerText = "でかい";
+                    } else {
+                        document.getElementById('judgment').innerText = "当たり";
+                    }
+                },
+                changeAnswer: function() {
+                    this.correctAnswer = Math.floor(Math.random() * 51);
+                    this.initialize();
+                },
+                giveUp: function() {
+                    document.getElementById('judgment').innerText = "正解は " + this.correctAnswer;
+                }
+            };
+            
+            game.initialize();
+
+            document.getElementById('submit').addEventListener('click', function(event) {
+                event.preventDefault();
+                game.judge();
+            });
+            document.getElementById('change').addEventListener('click', function() {
+                game.changeAnswer();
+            });
+            document.getElementById('giveup').addEventListener('click', function() {
+                game.giveUp();
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>数当てゲーム</h1>
+    <p>黒部分に謎の数字「<span class="result" id="result">0</span>」が隠れています。これを当ててみよう。</p>
+    <ul>
+        <li><input type="button" id="change" value="変更">: 答えを変える</li>
+        <li><input type="button" id="giveup" value="ギブ">: 答えを見る</li>
+    </ul>
+    <br>
+    <div style="border: double; display: inline-block; padding: 10px;">
+        <form>
+            <label for="number">謎の数字を入力:</label>
+            <input type="number" id="number">
+            <input type="submit" id="submit" value="勝負">
+        </form>
+    </div>
+    <div id="judgment"></div>
+</body>
+</html>
