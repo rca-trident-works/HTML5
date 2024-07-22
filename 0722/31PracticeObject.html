@@ -4,13 +4,72 @@
     <title>数当てゲーム Object版</title>
     <meta charset="utf-8" />
     <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
         .result {
             display: inline-block;
             width: 50px;
+            height: 50px;
+            line-height: 50px;
             color: black;
             background-color: black;
             text-align: center;
-            border: 1px solid red;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin: 10px 0;
+        }
+        input[type="button"], input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        input[type="button"]:hover, input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        input[type="number"] {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: calc(100% - 22px);
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+        .judgment {
+            font-size: 1.2em;
+            color: #333;
+            margin-top: 20px;
         }
     </style>
     <script>
@@ -62,20 +121,21 @@
     </script>
 </head>
 <body>
-    <h1>数当てゲーム</h1>
-    <p>黒部分に謎の数字「<span class="result" id="result">0</span>」が隠れています。これを当ててみよう。</p>
-    <ul>
-        <li><input type="button" id="change" value="変更">: 答えを変える</li>
-        <li><input type="button" id="giveup" value="ギブ">: 答えを見る</li>
-    </ul>
-    <br>
-    <div style="border: double; display: inline-block; padding: 10px;">
-        <form>
-            <label for="number">謎の数字を入力:</label>
-            <input type="number" id="number">
-            <input type="submit" id="submit" value="勝負">
-        </form>
+    <div class="container">
+        <h1>数当てゲーム</h1>
+        <p>黒部分に謎の数字「<span class="result" id="result">0</span>」が隠れています。これを当ててみよう。</p>
+        <ul>
+            <li><input type="button" id="change" value="変更">: 答えを変える</li>
+            <li><input type="button" id="giveup" value="ギブ">: 答えを見る</li>
+        </ul>
+        <div>
+            <form>
+                <label for="number">謎の数字を入力:</label>
+                <input type="number" id="number">
+                <input type="submit" id="submit" value="勝負">
+            </form>
+        </div>
+        <div id="judgment" class="judgment"></div>
     </div>
-    <div id="judgment"></div>
 </body>
 </html>
