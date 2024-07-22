@@ -14,9 +14,10 @@
         }
     </style>
     <script>
+        const RANGE = 50;
         document.addEventListener("DOMContentLoaded", function() {
             const game = {
-                correctAnswer: Math.floor(Math.random() * 51),
+                correctAnswer: Math.floor(Math.random() * RANGE + 1),
                 initialize: function() {
                     document.getElementById('result').innerText = this.correctAnswer;
                     document.getElementById('judgment').innerText = '';
@@ -37,7 +38,7 @@
                     }
                 },
                 changeAnswer: function() {
-                    this.correctAnswer = Math.floor(Math.random() * 51);
+                    this.correctAnswer = Math.floor(Math.random() * RANGE + 1);
                     this.initialize();
                 },
                 giveUp: function() {
