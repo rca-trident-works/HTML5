@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6で書く JavaScript基礎</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #2c3e50;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            border-radius: 3px;
+            font-family: Consolas, monospace;
+            padding: 2px 5px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 10px;
+            overflow-x: auto;
+            text-indent: -0.3em;
+        }
+
+        .note {
+            background-color: #e7f3fe;
+            border-left: 6px solid #2196F3;
+            margin-bottom: 15px;
+            padding: 4px 12px;
+            border-radius: 15px;
+        }
+
+        .chapter {
+            margin-top: 40px;
+            border-top: 2px solid #2c3e50;
+            padding-top: 20px;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JavaScriptをES6で書く①</h1>
+    <div id="chapter1" class="chapter">
+        <h2>1. ES（ECMAScript）6の概要</h2>
+        <div class="es-explanation">
+            <p>
+                <strong>ECMAScript（エクマスクリプト）</strong>とは、JavaScriptの標準仕様を定義したものであり、
+                ECMAインターナショナルによって標準化されている。
+                このECMAScriptをベースにした言語はJavaScript以外にも複数存在する（MicrosoftのTypeScriptなど）。
+                <br>
+                2015年にリリースされたECMAScriptの第6版は通称「ES6」と呼ばれており、
+                大規模な仕様追加が行われた。
+                現在のJavaScriptでの実装は、このES6の仕様に基づいて行われることが主流である。
+                「ES6で書く」ではこの中からよく使うものについて学ぶ。
+            </p>
+            <p class="note">適宜、ページ記載のコードをデベロッパーツールに打ち込み動作を確認しながら読み進めよう。</p>
+
+            <div class="highlight-box">
+                <h4>ES6の重要ポイント</h4>
+                <ul>
+                    <li>大規模な仕様追加が行われた画期的なバージョン</li>
+                    <li>現在のJavaScript実装の主流となっている</li>
+                    <li>新しい構文や機能が多数導入された
+                        <ul>
+                            <li>let と const による変数宣言</li>
+                            <li>アロー関数</li>
+                            <li>クラス構文</li>
+                            <li>モジュールシステム</li>
+                            など多数
+                        </ul>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="chapter2" class="chapter">
+        <h2>2. 変数宣言</h2>
+
+        <div id="chapter2-1">
+            <h3>2.1 var(ES6より前)とlet(ES6)</h3>
+            <h4>再定義の可否</h4>
+            <pre><code>
+// 再定義(varの場合)
+var v1 = 1;
+var v1 = 2;
+console.log(v1);  // 結果：2
+
+//再定義(letの場合)
+let l1 = 1;
+let l1 = 2; // エラーが発生
+</code></pre>
+            <p class="note">varは再定義ができてしまう。意図せずに再定義をしてしまい思わぬ誤作動を引き起こしてしまうことがある。</p>
+        </div>
+
+        <div id="chapter2-2">
+            <h3>2.2 const</h3>
+            <p>定数。再定義・値の再代入ができない。</p>
+            <pre><code>
+const c1 = 1;
+c1 = 2; // エラーが発生</code></pre>
+        </div>
+
+        <div id="chapter2-3">
+            <h3>2.3 スコープの違い</h3>
+            <p>varは関数スコープ、letとconstはブロックスコープ。</p>
+            <pre><code>
+var v2 = 1
+        
+if (v2 === 1) {
+    var vn1 = 'varの値は1';
+    let ln1 = 'letの値は2';
+    console.log(vn1);
+    console.log(ln1);
+}
+        
+console.log(vn1);
+console.log(ln1); // エラーが発生</code></pre>
+
+            <p>varはスコープの範囲が広く、宣言したことを忘れて
+                意図しない再定義や再代入をしてしまうことがある。
+                letやconstはブロックスコープであるため、プログラムを見る範囲が狭くて済む。</p>
+            <p class="note">変数を宣言する場合はconst→let→varの順番で検討する。</p>
+        </div>
+
+        <div id="chapter2-4">
+            <h3>2.4 グローバル変数（プログラムのどこからでも参照できる変数）</h3>
+            <h4>関数の外で定義</h4>
+            <pre><code>
+var globalVar = "これはグローバル変数";
+let globalLet = "これもグローバル変数";
+const globalConst = "もちろんこれもグローバル変数";
+        
+function someFunction() {
+    console.log(globalVar); // アクセス可能
+    console.log(globalLet); // アクセス可能
+    console.log(globalConst); // アクセス可能
+}
+someFunction();</code></pre>
+
+            <h4>var、let、const未使用</h4>
+            <p>varやletを使わないで変数に値を代入してしまうと暗黙的にグローバル変数となってしまう。それが関数内で行われた場合でもやはりグローバルスコープとなるため注意が必要。</p>
+
+            <pre><code>function createGlobal() {
+    strGrobal = "ここで宣言してもグローバル変数";
+}
+createGlobal();
+console.log(strGrobal); // アクセス可能</code></pre>
+
+            <p class="note">グローバル変数もスコープが大きいため、意図せぬ箇所で再代入をしていまうことがある。グローバル変数の使用は最低限にするべきである。</p>
+
+        </div>
+    </div>
+
+    <div id="chapter3" class="chapter">
+        <h2>3. 変数・関数の巻き上げとは</h2>
+        <p>JavaScriptでは、変数宣言と関数宣言が自動的にスコープの先頭に移動される現象を「巻き上げ（ホイスティング）」と呼ぶ。
+            これは、コードの実行前に変数や関数の宣言が処理されるためである。</p>
+        <pre><code>
+console.log(x); // undefined
+var x = 5;
+※undefinedも「データがない」というデータの一種。
+
+// 上記のコードは内部的に以下のように解釈される
+var x;
+console.log(x); // undefined
+x = 5;
+        </code></pre>
+
+        <p class="note">letとconstで宣言された変数も巻き上げられるが、初期化されるまで「一時的なデッドゾーン（TDZ）」に置かれ、アクセスするとエラー（リファレンスエラー）になる。</p>
+
+        <h3>巻き上げの弊害</h3>
+        <p>以下のコードの出力内容を考えてみる。その後、デベロッパーツールで動作を確認する。</p>
+        <pre><code>
+var myname = "グローバル";
+
+function func() {
+    console.log(myname);    //①
+    var myname = "ローカル";
+    console.log(myname);    //②
+}
+func();
+        </code></pre>
+        <p>想像と違う出力になったと思う。これは関数内のmyname宣言（代入はされない）が関数の先頭に巻き上げられた結果である。</p>
+
+        <h3>関数の巻き上げ</h3>
+        <pre><code>
+sayHello(); // "Hello!"
+    
+function sayHello() {
+    console.log("Hello!");
+}</code></pre>
+
+        <p>関数宣言も完全に巻き上げられるため、宣言前でも呼び出すことができる。</p>
+
+        <p class="note">巻き上げは予期せぬ動作を引き起こす可能性があるため、変数は使用する前に宣言し、初期化することが推奨されている。</p>
+    </div>
+
+    <div class="chapter">
+        <h3>練習問題：var から const と let への書き換え練習</h3>
+
+        <p>以下のプログラムは、varのみを使用して書かれている。このプログラムを、constとletを適切に使用して書き換えよ。</p>
+
+        <pre><code>
+var playerName = "Player 1";
+var score = 0;
+var highScore = 100;
+    
+function updateScore(points) {
+    score += points;
+    var scoreElement = document.getElementById('score');
+    scoreElement.textContent = "Score: " + score;
+    
+    var message = "";
+    if (score > highScore) {
+        highScore = score;
+        message = "New high score!";
+    } else {
+        message = "Keep going!";
+    }
+    
+    var messageElement = document.getElementById('message');
+    messageElement.textContent = message;
+}
+    
+function resetGame() {
+    score = 0;
+    var scoreElement = document.getElementById('score');
+    scoreElement.textContent = "Score: 0";
+    
+    var messageElement = document.getElementById('message');
+    messageElement.textContent = "Game reset. Good luck, " + playerName + "!";
+}
+        </code></pre>
+        <p>★動作確認</p>
+        <div id="score">Score: 0</div>
+        <div id="message"></div>
+
+        <button onclick="updateScore(10)">Add 10 Points</button>
+        <button onclick="resetGame()">Reset Game</button>
+
+        <h3>HTMLファイル内のこの下のscript要素内のソースを修正して動作を確認</h3>
+        <script>
+            // 元のプログラム（varのみ使用）
+            const playerMeta = {
+                name: "Player",
+                score: 0,
+                highScore: 100
+            };
+
+            // 定数
+            const HIGH_SCORE_MESSAGE = "New high score!";
+            const KEEP_GOING_MESSAGE = "Keep going!";
+            
+            // ユーティリティ関数
+            const getResetMessage = (name) => `Game reset. Good luck, ${name}!`;
+            const getScoreMessage = (score) => `Score: ${score}`;
+            const assertHighScore = (score) => score > playerMeta.highScore;
+            const newHighScore = (score) => assertHighScore(score) ? score : playerMeta.highScore;
+            const getPomptMessage = (score, highScore) => score > highScore ? HIGH_SCORE_MESSAGE : KEEP_GOING_MESSAGE;
+
+            // elementの参照を取得
+            const scoreElement = document.getElementById('score');
+            const messageElement = document.getElementById('message');
+
+            const updateScore = (points) => {
+                const currentScore = playerMeta.score + points;
+                playerMeta.score = currentScore;
+                messageElement.textContent = getPomptMessage(currentScore, playerMeta.highScore);
+                playerMeta.highScore = newHighScore(currentScore);
+                scoreElement.textContent = getScoreMessage(currentScore);
+            }
+
+            const resetGame = () => {
+                playerMeta.score = 0;
+                scoreElement.textContent = getScoreMessage(0);
+                messageElement.textContent = getResetMessage(playerMeta.name);
+            }
+        </script>
+
+        <details>
+            <summary>解答例（クリックして表示）</summary>
+            <pre><code>
+内緒
+            </code></pre>
+
+        </details>
+    </div>
+</body>
+
+</html>

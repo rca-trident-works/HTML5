@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アロー関数の解説</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #2c3e50;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            border-radius: 3px;
+            font-family: Consolas, monospace;
+            padding: 2px 5px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 10px;
+            overflow-x: auto;
+            text-indent: -0.3em;
+        }
+
+        .note {
+            background-color: #e7f3fe;
+            border-left: 6px solid #2196F3;
+            margin-bottom: 15px;
+            padding: 4px 12px;
+            border-radius: 15px;
+        }
+
+        .chapter {
+            margin-top: 40px;
+            border-top: 2px solid #2c3e50;
+            padding-top: 20px;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JavaScriptをES6で書く②</h1>
+    <div id="chapter1" class="chapter">
+        <p class="note">適宜、ページ記載のコードをデベロッパーツールに打ち込み動作を確認しながら読み進めよう。</p>
+        <h2>アロー関数</h2>
+        <p>従来の関数宣言よりも短く書くことができる。色々なところで有用である。<br>
+            デベロッパーツールで動作を確認しながら読み進めること。
+        </p>
+        <h2>1. 引数なし</h2>
+        <h3>いままでの記述方法</h3>
+        <pre><code>
+function hello(){
+    alert("Hello world!");
+}
+hello();</code></pre>
+
+        <h3>アロー関数使用</h3>
+        <pre><code>
+const hello = () =>{
+    alert("Hello world!");
+}
+hello();</code></pre>
+
+        <h3>省略形</h3>
+        <pre><code>
+const hello = () => alert("Hello world!");
+hello();</code></pre>
+        <p class="note">※関数は1行の場合、中括弧やreturnを省略できる。</p>
+    </div>
+
+
+
+    <div id="chapter2" class="chapter">
+        <h2>２. 引数あり</h2>
+        <h3>いままでの記述方法</h3>
+        <pre><code>
+const checkAmpm = (currentHour, currentMinute) => {
+if (currentHour < 12) {
+    return "AM";
+} else if (currentHour > 12) {
+    return "PM";
+} else {
+    //三項演算子
+    return currentMinute === 0 ? "noon" : "PM";
+}};
+
+const result = checkAmpm(20, 30);
+console.log(result); // "PM"</code></pre>
+
+        <h3>アロー関数使用</h3>
+        <pre><code>
+const checkAmpm = (currentHour, currentMinute) => {
+if (currentHour < 12) {
+    return "AM";
+} else if (currentHour > 12) {
+    return "PM";
+} else {
+    //三項演算子
+    return currentMinute === 0 ? "noon" : "PM";
+}};
+
+const result = checkAmpm(20, 30);
+console.log(result); // "PM"</code></pre>
+        <p class="note">※引数が一つの時は「currentHour => ～」と()を省略することができる。</p>
+    </div>
+
+    <div class="practice-question">
+
+        <div id="chapter2-5" class="chapter">
+            <h3>練習問題：アロー関数への書き換え</h3>
+            <p>以下の従来の関数宣言をアロー関数に書き換えよ。<br>
+                ※それぞれの関数をアロー関数に書き換え、可能な場合は省略形も示せ。
+                プログラムは下部のpre,codeタグ内に、動作確認後に記述せよ。
+            </p>
+
+            <pre><code>
+// 問題1: 引数なしの関数
+function greet() {
+    return "Hello, World!";
+}
+    
+// 問題2: 引数ありの関数
+function multiply(a, b) {
+    return a * b;
+}
+    
+// 問題3: 条件分岐を含む関数
+function checkAge(age) {
+    if (age >= 18) {
+        return "成人です";
+    } else {
+        return "未成年です";
+    }
+}
+    
+// 問題4: オブジェクトを返す関数
+function createPerson(name, age) {
+    return {
+        name: name,
+        age: age
+    };
+}
+    
+// 問題5: 即時実行関数
+(function() {
+    console.log("This function runs immediately");
+})();</code></pre>
+        </div>
+
+        <pre><code>
+
+// 問題1: 引数なしの関数
+const greet = () => "Hello, World!";
+
+// 問題2: 引数ありの関数
+const multiply = (a, b) => a * b;
+
+// 問題3: 条件分岐を含む関数
+const checkAge = age => age >= 18 ? "成人です" : "未成年です";
+
+// 問題4: オブジェクトを返す関数
+const createPerson = (name, age) => ({ name, age });
+
+// 問題5: 即時実行関数
+(() => console.log("This function runs immediately"))();
+
+    </div>
+</body>
+
+</html>
