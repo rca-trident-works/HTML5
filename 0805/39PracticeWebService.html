@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>macOS Style Window</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .window {
+            width: 80%;
+            height: 60%;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title-bar {
+            height: 30px;
+            background-color: #e8e8e8;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            border-bottom: 1px solid #ccc;
+            position: relative;
+        }
+
+        .title-bar .buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .title-bar .buttons .button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .button.close {
+            background-color: #ff5f57;
+        }
+
+        .button.minimize {
+            background-color: #ffbd2e;
+        }
+
+        .button.fullscreen {
+            background-color: #28c840;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .column_item {
+            width: 400px;
+            flex: 1;
+            border-right: 1px solid #ccc;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        COLUMN = 3;
+        <!-- Finder風レイアウトの中にlistを入れたdivを挿入する -->
+        $(function () {
+            for (let i = 0; i < 9; i++) {
+                if (i % COLUMN == 0) {
+                    $('#content_holder').append('<div style="display: flex; gap: 10px;"></div>');
+                }
+                $('#content_holder > div:last-child').append('<div class="column_item"></div>');
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="window">
+        <div class="title-bar">
+            <div class="buttons">
+                <span class="button close"></span>
+                <span class="button minimize"></span>
+                <span class="button fullscreen"></span>
+            </div>
+        </div>
+        <div class="content">
+            <!-- FlexboxでFinderのようなデザインを作成 -->
+            <div style="display: flex; gap: 10px;" id="content_holder">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
